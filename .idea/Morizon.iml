@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$" />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="bandit" />
+    <orderEntry type="module" module-name="db_connection" />
+    <orderEntry type="module" module-name="decimal" />
+    <orderEntry type="module" module-name="dns_cluster" />
+    <orderEntry type="module" module-name="ecto" />
+    <orderEntry type="module" module-name="ecto_sql" />
+    <orderEntry type="module" module-name="expo" />
+    <orderEntry type="module" module-name="finch" />
+    <orderEntry type="module" module-name="gettext" />
+    <orderEntry type="module" module-name="hpax" />
+    <orderEntry type="module" module-name="jason" />
+    <orderEntry type="module" module-name="mime" />
+    <orderEntry type="module" module-name="mint" />
+    <orderEntry type="module" module-name="nimble_options" />
+    <orderEntry type="module" module-name="nimble_pool" />
+    <orderEntry type="module" module-name="phoenix" />
+    <orderEntry type="module" module-name="phoenix_ecto" />
+    <orderEntry type="module" module-name="phoenix_html" />
+    <orderEntry type="module" module-name="phoenix_live_dashboard" />
+    <orderEntry type="module" module-name="phoenix_live_view" />
+    <orderEntry type="module" module-name="phoenix_pubsub" />
+    <orderEntry type="module" module-name="phoenix_template" />
+    <orderEntry type="module" module-name="plug" />
+    <orderEntry type="module" module-name="plug_crypto" />
+    <orderEntry type="module" module-name="postgrex" />
+    <orderEntry type="module" module-name="req" />
+    <orderEntry type="module" module-name="swoosh" />
+    <orderEntry type="module" module-name="telemetry" />
+    <orderEntry type="module" module-name="telemetry_metrics" />
+    <orderEntry type="module" module-name="thousand_island" />
+    <orderEntry type="module" module-name="users_api" />
+    <orderEntry type="module" module-name="websock" />
+    <orderEntry type="module" module-name="websock_adapter" />
+  </component>
+</module>

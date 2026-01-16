@@ -1,0 +1,48 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: library/postgres:18-alpine
+    environment:
+      POSTGRES_DB: users_db
+      POSTGRES_USER: users
+      POSTGRES_PASSWORD: users
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  phoenix:
+    build: ./users_api
+    environment:
+      DATABASE_URL: ecto://users:users@postgres/users_db
+      SECRET_KEY_BASE: devsecret
+      PHX_HOST: localhost
+    ports:
+      - "4000:4000"
+    depends_on:
+      - postgres
+    volumes:
+      - ./users_api:/app
+    command: >
+      sh -c "mix deps.get &&
+             mix ecto.create &&
+             mix ecto.migrate &&
+             mix phx.server"
+
+  symfony:
+    build: ./users_admin
+    environment:
+      API_URL: http://phoenix:4000/api
+    ports:
+      - "8000:8000"
+    depends_on:
+      - phoenix
+    volumes:
+      - ./users_admin:/var/www/html
+    command: >
+      sh -c "composer install &&
+             symfony server:start --no-tls --port=8000"
+
+volumes:
+  postgres_data:

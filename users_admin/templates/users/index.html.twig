@@ -1,0 +1,19 @@
+<h1>Users</h1>
+<a href="{{ path('users_new') }}">Add user</a>
+<table border="1">
+<tr><th>First</th><th>Last</th><th>Gender</th><th>Date</th><th>Actions</th></tr>
+{% for u in users %}
+<tr>
+<td>{{ u.first_name }}</td>
+<td>{{ u.last_name }}</td>
+<td>{{ u.gender }}</td>
+<td>{{ u.birthdate }}</td>
+<td>
+<a href="{{ path('users_edit', {id: u.id}) }}">Edit</a>
+<form method="post" action="{{ path('users_delete', {id: u.id}) }}" style="display:inline">
+<button type="submit">Delete</button>
+</form>
+</td>
+</tr>
+{% endfor %}
+</table>
